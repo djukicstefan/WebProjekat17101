@@ -1,0 +1,64 @@
+.roditelj
+{
+    display: flex;
+    justify-content: space-between;
+}
+
+body
+{
+    background-color: aqua;
+}
+
+.brodForma, .kontejnerForma
+{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100px;
+    border: 1px solid black;
+    margin-top: 0.5cm;
+    background-color: blue;
+    color: white;
+}
+
+select
+{
+    width: 35px;
+}
+
+.idPolje
+{
+    width: 100px;
+}
+
+.luka
+{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.paluba
+{
+    width: 78px;
+    height: 90px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin: 5px;
+    margin-bottom: 0.5cm;
+}
+
+.kontejner
+{
+    width: 24px;
+    height: 28px;
+    border: 1px solid black;
+    text-align: center;
+}
+
+.poljeZaTezinu
+{
+    width: 75px;
+}
+
