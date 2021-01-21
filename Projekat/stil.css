@@ -41,7 +41,6 @@ select
 {
     width: 78px;
     height: 90px;
-    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
