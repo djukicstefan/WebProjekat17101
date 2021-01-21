@@ -41,7 +41,7 @@ select
 {
     width: 78px;
     height: 90px;
-    border: 1px solid black;
+    
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
