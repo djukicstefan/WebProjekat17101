@@ -5,6 +5,7 @@ export class Luka{
     constructor(){
         this.brodovi = new Array();
         this.kontejner = null;
+        this.idevi = new Array();
     }
 
     dodajBrod(brod){
@@ -145,7 +146,7 @@ export class Luka{
         kontejnerForma.appendChild(dugme);
 
         dugme.onclick = ev => {
-            const id = kontejnerForma.querySelector(".idPolje").value;
+            const id = parseInt(kontejnerForma.querySelector(".idPolje").value);
             
             const ime = kontejnerForma.querySelector(`input[name=vrsta]:checked`).value;
             
@@ -160,7 +161,7 @@ export class Luka{
         kontejnerForma.appendChild(dugme1);
 
         dugme1.onclick = ev => {
-            const id = kontejnerForma.querySelector(".idPolje").value;
+            const id = parseInt(kontejnerForma.querySelector(".idPolje").value);
             this.obrisiKontejner(id);
         }
     }
@@ -175,7 +176,12 @@ export class Luka{
         if(brod == null){
             alert("Ne postoji ni jedan brod za dati kontejner!");
         }
+        else if(this.postojiId(kontejner.ID)){
+            alert("Kontejner sa tim ID-em vec postoji!");
+        }
         else{
+            this.idevi.push(kontejner.ID);
+
             brod.dodajKontejner(kontejner);
             this.osveziLabelu(brod);
         }
@@ -197,6 +203,7 @@ export class Luka{
         this.brodovi.forEach(brod => {
             if(brod.sadrziKontejner(idKontejnera)){
                 brod.obrisiKontejner(idKontejnera)
+                this.idevi = this.idevi.filter(i => i != idKontejnera);
                 this.osveziLabelu(brod);
             }
         })
@@ -215,5 +222,13 @@ export class Luka{
     osveziLabelu(brod){
         let pomoc = brod.paluba.childNodes;
         pomoc[9].innerHTML = `${brod.maxKapacitet}, ${brod.trenutnaZauzetost}`;
+    }
+
+    postojiId(id){
+        const potencijalni = this.idevi.find(i => i == id);
+        if(potencijalni != null){
+            return true;
+        }
+        return false;
     }
 }

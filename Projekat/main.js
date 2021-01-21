@@ -20,6 +20,7 @@ fetch("https://localhost:5001/Luka/PreuzmiLuku").then(p => {p.json().then(data =
                     if(broj < brod.kontejneri.length){
                         br.kontejneri[i][j] = new Kontejner(brod.kontejneri[broj].ime, brod.kontejneri[broj].id, 
                             brod.kontejneri[broj].tezina, brod.kontejneri[broj].oznaka);
+                        luka.idevi.push(br.kontejneri[i][j].ID);
                         broj++;
                     }
                     else if(pomoc > 0){
@@ -34,7 +35,6 @@ fetch("https://localhost:5001/Luka/PreuzmiLuku").then(p => {p.json().then(data =
 
             luka.dodajBrod(br);
             br.crtajBrodServerski(luka.kontejner, brod.kontejneri.length);
-                      
         })
         
     })

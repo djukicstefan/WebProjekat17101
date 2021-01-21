@@ -62,6 +62,10 @@ export class Kontejner{
                 boja = "red";
                 break;
             }
+            case "U":{
+                boja = "green";
+                break;
+            }
             default:{
                 boja = "orange";
             }
