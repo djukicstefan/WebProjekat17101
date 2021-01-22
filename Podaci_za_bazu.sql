@@ -1,58 +1,57 @@
 INSERT INTO Luka 
 DEFAULT VALUES;
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 7. 
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (500, 1, 300, 1);
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 8.
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (1000, 0, 1000, 1);
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 9.
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (1500, 0, 1500, 1);
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 15.
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (5000, 0, 5000, 1);
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 16.
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (6000, 6, 4650, 1);
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 17.
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (6000, 3, 4000, 1);
 
-INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) --ID = 18.
+INSERT INTO Brod (MaxKapacitet, BrojUpotrebljivihKontejnera, TrenutnaZauzetost, LukaID) 
 VALUES (4900, 5, 3000, 1);
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Hrana', 100, 'H', 8); --1.
+VALUES ('Hrana', 100, 'H', 8); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Gorivo', 300, 'G', 7); --2.
+VALUES ('Gorivo', 300, 'G', 7); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Vakcine', 300, 'V', 8); --3.
+VALUES ('Vakcine', 300, 'V', 8); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Gorivo', 1200, 'G', 9); --4.
+VALUES ('Gorivo', 1200, 'G', 9); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Gorivo', 300, 'G', 9); --5.
+VALUES ('Gorivo', 300, 'G', 9); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Vakcine', 5000, 'V', 15); --6.
+VALUES ('Vakcine', 5000, 'V', 15); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Hrana', 300, 'H', 16); --7.
+VALUES ('Hrana', 300, 'H', 16); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Vakcine', 600, 'V', 16); --8.
+VALUES ('Vakcine', 600, 'V', 16); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Gorivo', 3000, 'G', 16); --9.
+VALUES ('Gorivo', 3000, 'G', 16); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Vakcine', 4000, 'V', 17); --10.
+VALUES ('Vakcine', 4000, 'V', 17); 
 
 INSERT INTO Kontejner (Ime, Tezina, Oznaka, BrodID)
-VALUES ('Hrana', 3000, 'H', 18); --11.
+VALUES ('Hrana', 3000, 'H', 18); 
 
---Vrednosti ID polja za brodove treba da budu gorenavedeni da bi se kontejneri pravilno rasporedili tamo gde im je mesto!
