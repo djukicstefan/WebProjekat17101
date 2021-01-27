@@ -141,14 +141,10 @@ export class Luka{
 
         dugme.onclick = ev => {
             const id = parseInt(kontejnerForma.querySelector(".idPolje").value);
-            
             const ime = kontejnerForma.querySelector(`input[name=vrsta]:checked`).value;
-        
-                
             const tezina = parseInt(kontejnerForma.querySelector(".poljeZaTezinu").value);
             
             this.dodajKontejner(new Kontejner(ime, id, tezina, ime[0]));
-            
         }
 
         const dugme1 = document.createElement("button");
@@ -176,7 +172,6 @@ export class Luka{
         }
         else{
             this.idevi.push(kontejner.ID);
-
             brod.dodajKontejner(kontejner);
             this.osveziLabelu(brod);
             this.proveriBrod(brod);
