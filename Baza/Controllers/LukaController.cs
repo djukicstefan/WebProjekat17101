@@ -66,7 +66,7 @@ namespace Baza.Controllers
             {
                 if(kont.Brod == brod)
                 {
-                    ObrisiKontejner(kont.ID);    
+                    Context.Remove(kont);   
                 }
             }
             );
