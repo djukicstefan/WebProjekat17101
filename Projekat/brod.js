@@ -38,6 +38,9 @@ export class Brod{
         }
 
         let labell = document.createElement("label");
+        if(this.brojUpotrebljivihKontejnera == 0){
+        this.trenutnaZauzetost = this.maxKapacitet;
+        }
         labell.innerHTML = `${this.maxKapacitet}, ${this.trenutnaZauzetost}`;
         this.paluba.appendChild(labell);
     }
