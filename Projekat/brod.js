@@ -18,41 +18,13 @@ export class Brod{
         }
     }
 
-    crtajBrod(host){
-        this.paluba = document.createElement("div");
-        this.paluba.className = "paluba";
-        host.appendChild(this.paluba);
-
-        
-        let brojac = this.brojUpotrebljivihKontejnera;
-
-        for(var i = 0; i < this.n; i++){
-            for(var j = 0; j < this.m; j++){
-                if(brojac > 0){
-                    this.kontejneri[i][j].crtajKontejner(this.paluba, true, this.kontejneri[i][j].oznaka);
-                }
-                else{
-                    this.kontejneri[i][j].crtajKontejner(this.paluba, false, this.kontejneri[i][j].oznaka);
-                }
-                brojac--;
-            }
-        }
-
-        let labell = document.createElement("label");
-        labell.innerHTML = `${this.maxKapacitet}, ${this.trenutnaZauzetost}`;
-        this.paluba.appendChild(labell);
-       
-
-    }
-
     crtajBrodServerski(host, broj){
         this.paluba = document.createElement("div");
         this.paluba.className = "paluba";
         host.appendChild(this.paluba);
 
-        
         let brojac = this.brojUpotrebljivihKontejnera + broj;
-
+        
         for(var i = 0; i < this.n; i++){
             for(var j = 0; j < this.m; j++){
                 if(brojac > 0){
@@ -68,8 +40,6 @@ export class Brod{
         let labell = document.createElement("label");
         labell.innerHTML = `${this.maxKapacitet}, ${this.trenutnaZauzetost}`;
         this.paluba.appendChild(labell);
-       
-
     }
 
 

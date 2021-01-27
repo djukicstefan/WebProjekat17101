@@ -1,30 +1,26 @@
 export class Kontejner{
     
-    constructor(ime, ID, tezina, oznaka, boja){
+    constructor(ime, ID, tezina, oznaka){
         this.ime = ime;
         this.ID = ID;
         this.tezina = tezina;
         this.oznaka = oznaka;
         this.miniKontejner = null;
-        this.boja = boja;
+        this.boja = null;
     }
 
-    crtajKontejner(host, nesto, oznaka, boja){
+    crtajKontejner(host, nesto, oznaka){
         this.miniKontejner = document.createElement("div");
         this.miniKontejner.className = "kontejner";
         if(nesto == true){
-            if(oznaka == "" || oznaka == "U"){
+            if(oznaka == ""){
                 this.oznaka = "U";
-                this.boja = "green";
-            }
-            else if(boja == null){
-                this.boja = this.vratiBoju(oznaka);
             }
         }
         else{
             this.oznaka = "N";
-            this.boja = "red";
         }
+        this.boja = this.vratiBoju(this.oznaka);
 
         this.miniKontejner.style.backgroundColor = this.boja
         this.miniKontejner.innerHTML = this.oznaka;
@@ -32,7 +28,7 @@ export class Kontejner{
         host.appendChild(this.miniKontejner);
     }
 
-    azurirajKontejner(ime, ID, tezina, oznaka, boja){
+    azurirajKontejner(ime, ID, tezina, oznaka){
         this.ime = ime;
         this.ID = ID;
         this.tezina = tezina;
