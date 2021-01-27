@@ -59,6 +59,18 @@ namespace Baza.Controllers
         public async Task PosaljiBrodVanLuke(int idBroda)
         {
             var brod = await Context.FindAsync<Brod>(idBroda);
+
+            List<Kontejner> kontejneri = await Context.Kontejneri.ToListAsync(); 
+
+            kontejneri.ForEach(kont => 
+            {
+                if(kont.Brod == brod)
+                {
+                    ObrisiKontejner(kont.ID);    
+                }
+            }
+            );
+
             Context.Remove(brod);
             await Context.SaveChangesAsync();
         }
@@ -127,7 +139,16 @@ namespace Baza.Controllers
                 
                 var brod = stariKontejner.Brod;
                 brod.TrenutnaZauzetost -= stariKontejner.Tezina;
-                brod.TrenutnaZauzetost += kontejner.Tezina;
+
+                if(brod.TrenutnaZauzetost + kontejner.Tezina > brod.MaxKapacitet)
+                {
+                     brod.TrenutnaZauzetost += stariKontejner.Tezina;
+                    return BadRequest("Izmenjeni kontejner premasuje dozvoljenu tezinu broda!");
+                }
+                else
+                {
+                    brod.TrenutnaZauzetost += kontejner.Tezina;
+                }
 
 
                 stariKontejner.Ime = kontejner.Ime;
